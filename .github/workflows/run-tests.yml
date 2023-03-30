@@ -1,6 +1,6 @@
 name: Run Tests
 
-on: workflow_dispatch
+on: push
 jobs:
   run-tests:
     runs-on: ubuntu-20.04
@@ -15,3 +15,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
+  start-deploy-if-success:
+    name: Start Deployment to Server
+    runs-on: ubuntu-20.04
+    needs: [run-tests]
+    steps:
+      - name: ssh to server
+      - run: ssh winc@167.71.9.171
