@@ -15,3 +15,14 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
+  Connect to server:
+    runs-on: ubuntu-20.04
+    uses: webfactory/ssh-agent@v0.4.0
+    steps: 
+      name: Connect with SSH
+      run: ssh winc@167.71.9.171
+      with:
+        ssh-public-key: ${{ secrets.DEPLOY_KEY }}
+      name: Test
+      run: cat /home/winc/test.txt
+      run: exit
