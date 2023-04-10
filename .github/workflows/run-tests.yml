@@ -15,12 +15,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.DEPLOY_KEY }}
-      - name: Connect through SSH
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+      - name: Connect to Server
+        run: ssh #{{secret.SSH_USER}}@${{SSH_HOST}}
       - name: Test
         run: | 
              cat /home/winc/test.txt
