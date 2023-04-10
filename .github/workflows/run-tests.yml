@@ -21,5 +21,5 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          script: |
-                bash /home/winc/deploy.rc        
+          script: | 
+                echo '${{secrets.SSH_PW}} | sudo bash deploy.rc        
