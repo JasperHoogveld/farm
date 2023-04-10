@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: | 
-                echo '${{secrets.SSH_PW}} | sudo bash deploy.rc        
+                echo '${{secrets.SSH_PW}}' | sudo bash deploy.rc        
