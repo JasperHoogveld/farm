@@ -16,7 +16,7 @@ jobs:
       - name: Run tests
         run: pytest
       - name: Connect to Server
-        run: ssh -J #{{secret.SSH_USER}}@${{secrets.SSH_HOST}}
+        run: ssh -J ${{secret.SSH_USER}}@${{secrets.SSH_HOST}}
       - name: Test
         run: | 
              cat /home/winc/test.txt
