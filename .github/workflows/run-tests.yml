@@ -26,5 +26,6 @@ jobs:
       - name: Connect through SSH
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
       - name: Test
-        run: cat /home/winc/test.txt
-        run: exit
+        run: | 
+             cat /home/winc/test.txt
+             exit
