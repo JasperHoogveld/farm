@@ -15,9 +15,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
-  Connect to server:
-    runs-on: ubuntu-20.04
-    steps:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
