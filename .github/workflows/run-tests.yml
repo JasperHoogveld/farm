@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |  
-                sudo bash /home/winc/deploy.rc        
+                sudo bash /home/deploy.rc        
